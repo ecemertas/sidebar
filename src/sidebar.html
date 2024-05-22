@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body class="bg-gray-300 text-neutral-400 font-poppins"> 
+    
+
+
+<div class="flex w-screen h-screen">
+        
+    <div class="w-[300px] duration-300 overflow-hidden bg-slate-800 rounded " id="sidebar"> 
+            <div class="text-3xl mt-5 px-10 py-4  flex items-center gap-3"> 
+                <div class="relative w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+                    <svg class="absolute w-12 h-12 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
+                </div> User
+            </div> 
+        <div class="py-4 flex flex-col mt-5">
+            
+            <a href="" class="flex items-center gap-3 hover:bg-slate-600 rounded-lg duration-300 px-10 py-4" > <ion-icon name="person-outline"></ion-icon></ion-icon> User Profile</a>
+            <a href="" class="flex items-center gap-3 hover:bg-slate-600 rounded-lg duration-300 px-10 py-4" > <ion-icon name="notifications-outline"></ion-icon> Notifications</a>
+            <div class="flex items-center gap-3 hover:bg-slate-600 rounded-lg duration-300 px-10 py-4" onclick="dropdown()">
+                <div class="flex items-center gap-3">
+                    <ion-icon name="analytics-outline"></ion-icon> Analytics
+                  <span class="rotate-180" id="arrow">
+                    <ion-icon name="chevron-down-outline" class="size-3"></ion-icon>
+                  </span>
+                </div>
+              </div>
+              <div
+                class="text-left text-sm mt-2 w-4/5 mx-auto cursor-pointer"
+                id="submenu"
+              >
+                <h1 class="gap-3 hover:bg-slate-600 duration-300 rounded-md px-10 py-4">
+                  Menu 1
+                </h1>
+                <h1 class="gap-3 hover:bg-slate-600 duration-300 rounded-md px-10 py-4">
+                  Menu 2
+                </h1>
+                <h1 class="gap-3 hover:bg-slate-600 duration-300 rounded-md px-10 py-4">
+                  Menu 3
+                </h1>
+              </div> <a href="" class="flex items-center gap-3 hover:bg-slate-600 rounded-lg duration-300 px-10 py-4"><ion-icon name="settings-outline"></ion-icon>Settings</a>
+            <a href="" class="flex items-center gap-3 hover:bg-slate-600 rounded-lg duration-300 px-10 py-4"><ion-icon name="information-circle-outline"></ion-icon>Help</a>
+            <a href="" class="flex items-center gap-3 hover:bg-slate-600 rounded-lg duration-300 px-10 py-4" > <ion-icon name="log-out-outline"></ion-icon> Log out</a>
+        </div>
+        
+    </div>
+       
+        <div class="grow px-10 py-4" id="content"> <ion-icon name="menu-outline" id="menuToggleBtn" class="text-3xl cursor-pointer text-neutral-700"></ion-icon> 
+        </div>
+    
+        
+</div>
+    
+    <script>
+        let toggleButton= document.querySelector('#menuToggleBtn').addEventListener('click', ()=> {
+            let sidebar= document.querySelector('#sidebar');
+            sidebar.classList.toggle("translate-x-[-100%]");
+            sidebar.classList.toggle("w-[-0px]");
+        })
+    </script>
+    <script>
+        function dropdown() {
+          document.querySelector("#submenu").classList.toggle("hidden");
+          document.querySelector("#arrow").classList.toggle("rotate-180");
+        }
+        dropdown();
+  
+        function openSidebar() {
+          document.querySelector(".sidebar").classList.toggle("hidden");
+        }
+    </script>
+      
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
